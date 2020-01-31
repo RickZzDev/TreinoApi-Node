@@ -13,6 +13,7 @@ series = (app)=>{
     app.post('/series',(req,res)=>{
         var seriesDao = app.model.Series;
         let serie = req.body;
+        
         seriesDao.insere(serie).then(resultado =>{
             res.status(201).send(serie)
         }).catch(erro => {res.status(500).send(erro)})
